@@ -1,8 +1,8 @@
 {
     "name": "fun-rpc",
     "displayName": "Fun RPC",
-    "version": "1.0.2",
-    "description": "Showcase your coding activity on Discord with real-time stats and time tracking.",
+    "version": "1.0.3",
+    "description": "Monitor and broadcast your daily coding times and projects directly to your Discord profile presence.",
     "publisher": "nourbassem",
     "license": "MIT",
     "author": "nourbassem",
