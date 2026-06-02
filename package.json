@@ -554,7 +554,7 @@
                                             "url": {
                                                 "type": "string",
                                                 "description": "The url to open when the button is clicked.",
-                                                "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                "default": "https://github.com/funx8/Fun_RCP",
                                                 "minLength": 1
                                             }
                                         }
@@ -575,7 +575,7 @@
                                             "url": {
                                                 "type": "string",
                                                 "description": "The url to open when the button is clicked.",
-                                                "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                "default": "https://github.com/funx8/Fun_RCP",
                                                 "minLength": 1
                                             }
                                         }
@@ -596,7 +596,7 @@
                                             "url": {
                                                 "type": "string",
                                                 "description": "The url to open when the button is clicked.",
-                                                "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                "default": "https://github.com/funx8/Fun_RCP",
                                                 "minLength": 1
                                             }
                                         }
@@ -693,7 +693,7 @@
                                             "url": {
                                                 "type": "string",
                                                 "description": "The url to open when the button is clicked.",
-                                                "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                "default": "https://github.com/funx8/Fun_RCP",
                                                 "minLength": 1
                                             }
                                         }
@@ -714,7 +714,7 @@
                                             "url": {
                                                 "type": "string",
                                                 "description": "The url to open when the button is clicked.",
-                                                "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                "default": "https://github.com/funx8/Fun_RCP",
                                                 "minLength": 1
                                             }
                                         }
@@ -735,7 +735,7 @@
                                             "url": {
                                                 "type": "string",
                                                 "description": "The url to open when the button is clicked.",
-                                                "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                "default": "https://github.com/funx8/Fun_RCP",
                                                 "minLength": 1
                                             }
                                         }
@@ -760,7 +760,7 @@
                                                     "url": {
                                                         "type": "string",
                                                         "description": "The url to open when the button is clicked.",
-                                                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                        "default": "https://github.com/funx8/Fun_RCP",
                                                         "minLength": 1
                                                     }
                                                 }
@@ -780,7 +780,7 @@
                                                     "url": {
                                                         "type": "string",
                                                         "description": "The url to open when the button is clicked.",
-                                                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                        "default": "https://github.com/funx8/Fun_RCP",
                                                         "minLength": 1
                                                     }
                                                 }
@@ -800,7 +800,7 @@
                                                     "url": {
                                                         "type": "string",
                                                         "description": "The url to open when the button is clicked.",
-                                                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                                                        "default": "https://github.com/funx8/Fun_RCP",
                                                         "minLength": 1
                                                     }
                                                 }
@@ -864,7 +864,7 @@
                     },
                     "vscord.status.buttons.button1.active.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button1.inactive.enabled": {
@@ -878,7 +878,7 @@
                     },
                     "vscord.status.buttons.button1.inactive.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button1.idle.enabled": {
@@ -892,7 +892,7 @@
                     },
                     "vscord.status.buttons.button1.idle.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button1.git.active.enabled": {
@@ -953,7 +953,7 @@
                     },
                     "vscord.status.buttons.button2.active.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button2.inactive.enabled": {
@@ -967,7 +967,7 @@
                     },
                     "vscord.status.buttons.button2.inactive.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button2.idle.enabled": {
@@ -981,7 +981,7 @@
                     },
                     "vscord.status.buttons.button2.idle.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button2.git.active.enabled": {
@@ -995,7 +995,7 @@
                     },
                     "vscord.status.buttons.button2.git.active.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button2.git.inactive.enabled": {
@@ -1009,7 +1009,7 @@
                     },
                     "vscord.status.buttons.button2.git.inactive.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
                     "vscord.status.buttons.button2.git.idle.enabled": {
@@ -1023,7 +1023,7 @@
                     },
                     "vscord.status.buttons.button2.git.idle.url": {
                         "type": "string",
-                        "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                        "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     }
                 }
