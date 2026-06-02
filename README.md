@@ -5,10 +5,6 @@
 # Fun RPC 🚀
 
 **Premium Discord Rich Presence extension for Visual Studio Code, locked to official assets with built-in persistent time-tracking and sidebar time editor.**
-
-[![Visual Studio Marketplace Version](https://img.shields.io/badge/version-1.0.2-blue.svg)](#)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](#)
-
 </div>
 
 ---
