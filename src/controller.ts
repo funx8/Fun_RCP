@@ -17,6 +17,7 @@ export class RPCController {
     canSendActivity = true;
     manualIdleMode = false;
     manualIdling = false;
+    isIdling = false;
     state: SetActivity = {};
     debug = false;
     client: Client;
@@ -69,11 +70,49 @@ export class RPCController {
         editor.setStatusBarItem(StatusBarMode.Disconnected);
     }
 
+    private resetIdleTimer() {
+        if (!this.enabled) return;
+        const config = getConfig();
+        if (!config.get(CONFIG_KEYS.Status.Idle.Check)) return;
+
+        if (this.idleTimeout) {
+            clearTimeout(this.idleTimeout);
+            this.idleTimeout = undefined;
+        }
+
+        if (this.isIdling) {
+            this.isIdling = false;
+            void this.activityThrottle.callable();
+        }
+
+        const timeout = config.get(CONFIG_KEYS.Status.Idle.Timeout);
+        if (timeout && timeout !== 0) {
+            this.idleTimeout = setTimeout(
+                async () => {
+                    if (!config.get(CONFIG_KEYS.Status.Idle.Check)) return;
+
+                    if (
+                        config.get(CONFIG_KEYS.Status.Idle.DisconnectOnIdle) &&
+                        config.get(CONFIG_KEYS.Status.Idle.ResetElapsedTime)
+                    ) {
+                        delete this.state.startTimestamp;
+                    }
+
+                    if (!this.enabled) return;
+
+                    void this.activityThrottle.callable(false, true);
+                },
+                timeout * 1000
+            );
+        }
+    }
+
     private listen() {
         const config = getConfig();
 
         const fileSwitch = window.onDidChangeActiveTextEditor((e) => {
             logInfo("onDidChangeActiveTextEditor()");
+            this.resetIdleTimer();
             if (e) {
                 this.activityThrottle.reset();
                 void this.activityThrottle.callable();
@@ -86,19 +125,23 @@ export class RPCController {
         const fileEdit = workspace.onDidChangeTextDocument((e) => {
             if (e.document !== dataClass.editor?.document) return;
             logInfo("onDidChangeTextDocument()");
+            this.resetIdleTimer();
             this.activityThrottle.reset();
             void this.activityThrottle.callable();
         });
         const fileSelectionChanged = window.onDidChangeTextEditorSelection((e) => {
             if (e.textEditor !== dataClass.editor) return;
             logInfo("onDidChangeTextEditorSelection()");
+            this.resetIdleTimer();
             this.activityThrottle.reset();
             void this.activityThrottle.callable();
         });
         const debugStart = debug.onDidStartDebugSession(() => {
+            this.resetIdleTimer();
             void this.activityThrottle.callable();
         });
         const debugEnd = debug.onDidTerminateDebugSession(() => {
+            this.resetIdleTimer();
             void this.activityThrottle.callable();
         });
         const diagnosticsChange = languages.onDidChangeDiagnostics(() => onDiagnosticsChange());
@@ -138,27 +181,28 @@ export class RPCController {
         const config = getConfig();
 
         if (config.get(CONFIG_KEYS.Status.Idle.Timeout) !== 0) {
-            if (windowState.focused && this.idleTimeout) {
-                clearTimeout(this.idleTimeout);
-                void this.activityThrottle.callable();
+            if (windowState.focused) {
+                this.resetIdleTimer();
             } else if (config.get(CONFIG_KEYS.Status.Idle.Check)) {
-                this.idleTimeout = setTimeout(
-                    async () => {
-                        if (!config.get(CONFIG_KEYS.Status.Idle.Check)) return;
+                if (!this.idleTimeout) {
+                    this.idleTimeout = setTimeout(
+                        async () => {
+                            if (!config.get(CONFIG_KEYS.Status.Idle.Check)) return;
 
-                        if (
-                            config.get(CONFIG_KEYS.Status.Idle.DisconnectOnIdle) &&
-                            config.get(CONFIG_KEYS.Status.Idle.ResetElapsedTime)
-                        ) {
-                            delete this.state.startTimestamp;
-                        }
+                            if (
+                                config.get(CONFIG_KEYS.Status.Idle.DisconnectOnIdle) &&
+                                config.get(CONFIG_KEYS.Status.Idle.ResetElapsedTime)
+                            ) {
+                                delete this.state.startTimestamp;
+                            }
 
-                        if (!this.enabled) return;
+                            if (!this.enabled) return;
 
-                        void this.activityThrottle.callable(false, true);
-                    },
-                    config.get(CONFIG_KEYS.Status.Idle.Timeout)! * 1000
-                );
+                            void this.activityThrottle.callable(false, true);
+                        },
+                        config.get(CONFIG_KEYS.Status.Idle.Timeout)! * 1000
+                    );
+                }
             }
         }
     }
@@ -180,6 +224,7 @@ export class RPCController {
     async sendActivity(isViewing = false, isIdling = false): Promise<SetActivityResponse | undefined> {
         if (!this.enabled) return;
         if (this.manualIdleMode) isIdling = this.manualIdling;
+        this.isIdling = isIdling;
         this.checkCanSend(isIdling);
         this.state = await activity(this.state, isViewing, isIdling);
         this.state.instance = true;

@@ -22,8 +22,12 @@ const extensionConfig = {
         }
     },
     externals: {
-        vscode: "commonjs vscode" // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
-        // modules added here also need to be added in the .vscodeignore file
+        vscode: "commonjs vscode",
+        "@xhayper/discord-rpc": "commonjs @xhayper/discord-rpc",
+        "discord-api-types": "commonjs discord-api-types",
+        "filesize": "commonjs filesize",
+        "git-url-parse": "commonjs git-url-parse",
+        "normalize-url": "commonjs normalize-url"
     },
     resolve: {
         // support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader

@@ -1,6 +1,7 @@
 import { resolveLangName, toLower, toTitle, toUpper, getArticle } from "./helpers/resolveLangName";
 import { type GatewayActivityButton } from "discord-api-types/v10";
 import { type SetActivity } from "@xhayper/discord-rpc";
+import { TimeTracker } from "./helpers/timeTracker";
 import { CONFIG_KEYS, FAKE_EMPTY } from "./constants";
 import { getFileSize } from "./helpers/getFileSize";
 import { isExcluded } from "./helpers/isExcluded";
@@ -99,9 +100,10 @@ export const activity = async (
     if (isIdling && !config.get(CONFIG_KEYS.Status.Idle.Enabled)) return {};
 
     if (config.get(CONFIG_KEYS.Status.ShowElapsedTime)) {
+        const accumulatedMinutes = dataClass.workspaceName ? TimeTracker.getAccumulatedMinutes(dataClass.workspaceName) : 0;
         presence.startTimestamp = config.get(CONFIG_KEYS.Status.ResetElapsedTimePerFile)
-            ? Date.now()
-            : (previous.startTimestamp ?? Date.now());
+            ? Date.now() - accumulatedMinutes * 60 * 1000
+            : (previous.startTimestamp ?? (Date.now() - accumulatedMinutes * 60 * 1000));
     } else {
         delete presence.startTimestamp;
     }
@@ -382,25 +384,11 @@ export const replaceAppInfo = (text: string): string => {
     const { appName } = env;
 
     const isInsider = appName.includes("Insiders");
-    const isCodium = appName.startsWith("VSCodium") || appName.startsWith("codium");
-    const isAntigravity = appName.startsWith("Antigravity");
-    const isCursor = appName.startsWith("Cursor");
-
-    const insiderAppName = isCodium ? "vscodium-insiders" : "vscode-insiders";
-    let normalAppName;
-
-    if (isCursor) {
-        normalAppName = "cursor";
-    } else if (isAntigravity) {
-        normalAppName = "antigravity";
-    } else if (isCodium) {
-        normalAppName = "vscodium";
-    } else {
-        normalAppName = "vscode";
-    }
+    const insiderAppName = "vscode-insiders";
+    const normalAppName = "vscode";
 
     const replaceMap = new Map([
-        ["{app_name}", appName],
+        ["{app_name}", "Visual Studio Code"],
         ["{app_id}", isInsider ? insiderAppName : normalAppName]
     ]);
 

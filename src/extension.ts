@@ -6,6 +6,7 @@ import { CONFIG_KEYS } from "./constants";
 import { getConfig } from "./config";
 import { logInfo } from "./logger";
 import { dataClass } from "./data";
+import { TimeTracker } from "./helpers/timeTracker";
 
 const controller = new RPCController(
     getApplicationId(getConfig()).clientId,
@@ -182,11 +183,26 @@ export const registerCommands = (ctx: ExtensionContext) => {
 
 export async function activate(ctx: ExtensionContext) {
     logInfo("Discord Rich Presence for VS Code activated.");
+    
+    // Initialize persistent time tracker
+    TimeTracker.initialize(ctx);
+
     editor.setStatusBarItem(StatusBarMode.Pending);
     registerCommands(ctx);
     registerListeners(ctx);
 
     if (!getConfig().get(CONFIG_KEYS.Enable)) await controller.disable();
+
+    // Start persistent time tracking (every 60 seconds)
+    const timeTrackingInterval = setInterval(() => {
+        if (controller.enabled && !controller.isIdling && dataClass.workspaceName) {
+            TimeTracker.incrementMinutes(dataClass.workspaceName);
+        }
+    }, 60000);
+
+    ctx.subscriptions.push({
+        dispose: () => clearInterval(timeTrackingInterval)
+    });
 }
 
 export async function deactivate() {

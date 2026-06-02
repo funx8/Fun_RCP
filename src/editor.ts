@@ -16,7 +16,7 @@ class EditorController implements Disposable {
 
     #getAlignmentFromConfig(config: ExtensionConfiguration): StatusBarAlignment {
         const value = config.get(CONFIG_KEYS.Behaviour.StatusBarAlignment);
-        return StatusBarAlignment[value ?? "Right"];
+        return StatusBarAlignment[value ?? "Left"];
     }
 
     setStatusBarItem(mode: StatusBarMode) {
@@ -35,16 +35,16 @@ class EditorController implements Disposable {
         }
 
         const whenDisconnected: Partial<StatusBarItem> = {
-            text: "$(warning) Discord RPC",
+            text: "$(warning) Fun Discord RPC",
             tooltip: "Disconnected. Click to reconnect",
             command: "vscord.reconnect"
         };
         const whenPending: Partial<StatusBarItem> = {
-            text: "$(pulse) Discord RPC",
+            text: "$(pulse) Fun Discord RPC",
             tooltip: "Please, wait. Connecting to Discord Gateway..."
         };
         const whenSucceeded: Partial<StatusBarItem> = {
-            text: "Discord RPC",
+            text: "Fun Discord RPC",
             tooltip: "Connected to Discord Gateway. Click to disconnect",
             command: "vscord.disconnect"
         };
