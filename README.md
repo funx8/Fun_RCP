@@ -4,62 +4,62 @@
 
 # Fun RPC 🚀
 
-**Highly customizable Discord Rich Presence extension for Visual Studio Code, Cursor, VSCodium, and Antigravity IDE.**
+**Premium Discord Rich Presence extension for Visual Studio Code, locked to official assets with built-in persistent time-tracking and sidebar time editor.**
 
 [![Visual Studio Marketplace Version](https://img.shields.io/badge/version-1.0.2-blue.svg)](#)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](#)
 
 </div>
 
 ---
 
-**Fun RPC** is a custom, feature-rich version of Discord Rich Presence designed to showcase your coding activity in real-time. It has been customized to deliver a premium, consistent developer experience.
+**Fun RPC** is a highly customized, feature-rich Discord Rich Presence extension designed to showcase your coding activity in real-time. Created to deliver a premium and seamless developer experience, it keeps your presence updated with precise active coding stats.
 
-## ✨ Special Customized Features
+## ✨ Premium Features
 
-*   **🔒 Locked VS Code Theme**: No matter which editor you use (Cursor, VSCodium, Antigravity, etc.), the extension is locked to display the official **Visual Studio Code** icons and application name automatically to your friends on Discord.
-*   **⏳ Persistent Time Tracker**: Tracks active coding minutes spent on each workspace folder. The elapsed time is saved locally to a JSON file (`time_tracker.json`) and continues/accumulates dynamically—even if you close the IDE or restart your machine!
-*   **💻 Clean Status Bar**: Displays status on the **bottom-left** next to Git branch indicators for better visibility, under the name **"Fun Discord RPC"**.
-
----
-
-## ⚙️ How to Personalize
-
-To fully customize this document and your extension, please update the following placeholders in `package.json` and this `README.md`:
-
-1.  **Your GitHub Repository**: Replace `[GITHUB_URL]` with your repo link (e.g. `https://github.com/funx8/Fun_RCP`).
-2.  **Your Name/Handle**: Change the publisher and author fields in `package.json`.
-3.  **Custom Badges/Social Links**: Add links to your Discord server or website.
+*   **🔒 Locked VS Code Identity**: The extension is locked to display the official **Visual Studio Code** application name and assets on Discord, ensuring a consistent and clean look regardless of your IDE flavor.
+*   **⏳ Persistent Time Tracking**: Tracks your actual coding minutes per workspace folder. The elapsed time is saved locally to a JSON file (`time_tracker.json`) and continues accumulating dynamically across IDE sessions and system restarts.
+*   **📊 Sidebar Time Editor**: A dedicated sidebar TreeView shows all your projects and their accumulated minutes. Click on any item to instantly edit its time using a popup input box. Changes are applied immediately without restarting the IDE.
+*   **💻 Clean Status Bar**: Displays the presence status on the **bottom-left** status bar next to your Git branch indicator as **"Fun Discord RPC"**.
 
 ---
 
-## 📌 Variables list
+## 🛠️ Sidebar Time Tracker & Editor
 
-The following variables will be replaced with their respective values in your custom strings:
+Fun RPC adds an icon to your activity bar (Sidebar). When opened, you can:
+1. **View All Workspaces**: See a clear list of all workspace folders you have worked on and their active minutes.
+2. **Edit Time Instantly**: Click on any workspace folder, enter the new coding time in minutes, and press `Enter`. The time is updated locally and the Discord status resets immediately in real-time.
+
+---
+
+## 📌 Variables List
+
+You can use the following variables to customize your status messages:
 
 | Variable                              | Value                                              |
 | ------------------------------------- | -------------------------------------------------- |
 | `{app_name}`                          | always "Visual Studio Code"                        |
 | `{app_id}`                            | always "vscode" or "vscode-insiders"               |
-| `{file_name}`                         | name of the current file                           |
-| `{file_extension}`                    | extension of the file                              |
-| `{file_size}`                         | size of the file                                   |
-| `{folder_and_file}`                   | folder and file name                               |
-| `{relative_file_path}`                | filepath relative to the workspace folder          |
-| `{directory_name}`                    | directory name                                     |
-| `{workspace}`                         | name of the active workspace                       |
-| `{problems_count}`                    | number of active errors/warnings                   |
-| `{line_count}`                        | total lines in file                                |
-| `{current_line}`                      | current cursor line                                |
-| `{git_branch}`                        | current git branch                                 |
-| `{git_url}`                           | url link to the git repository                     |
+| `{file_name}`                         | Name of the current file                           |
+| `{file_extension}`                    | Extension of the file                              |
+| `{file_size}`                         | Size of the file                                   |
+| `{folder_and_file}`                   | Folder and file name                               |
+| `{relative_file_path}`                | Filepath relative to the workspace folder          |
+| `{directory_name}`                    | Directory name                                     |
+| `{workspace}`                         | Name of the active workspace                       |
+| `{problems_count}`                    | Number of active errors/warnings                   |
+| `{line_count}`                        | Total lines in file                                |
+| `{current_line}`                      | Current cursor line                                |
+| `{git_branch}`                        | Current git branch                                 |
+| `{git_url}`                           | URL link to the git repository                     |
 
 ---
 
-## 📥 Installation (VSIX)
+## 📥 Installation
 
-1. Open your IDE (VS Code).
+1. Open your IDE.
 2. Go to Extensions (`Ctrl+Shift+X`).
-3. Click the three dots `...` in the top right.
+3. Click the three dots `...` in the top right of the extensions pane.
 4. Select **Install from VSIX...**
 5. Choose `fun-rpc-1.0.2.vsix`.
 6. Reload Window.
