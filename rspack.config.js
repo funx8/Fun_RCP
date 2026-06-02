@@ -22,12 +22,7 @@ const extensionConfig = {
         }
     },
     externals: {
-        vscode: "commonjs vscode",
-        "@xhayper/discord-rpc": "commonjs @xhayper/discord-rpc",
-        "discord-api-types": "commonjs discord-api-types",
-        "filesize": "commonjs filesize",
-        "git-url-parse": "commonjs git-url-parse",
-        "normalize-url": "commonjs normalize-url"
+        vscode: "commonjs vscode"
     },
     resolve: {
         // support reading TypeScript and JavaScript files, 📖 -> https://github.com/TypeStrong/ts-loader
