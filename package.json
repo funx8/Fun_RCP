@@ -2,12 +2,10 @@
     "name": "fun-rpc",
     "displayName": "Fun RPC",
     "version": "1.0.2",
-    "description": "Highly customizable Discord Rich Presence extension for Visual Studio Code",
+    "description": "Showcase your coding activity on Discord with real-time stats and time tracking.",
     "publisher": "nourbassem",
     "license": "MIT",
-    "contributors": [
-        "Fun"
-    ],
+    "author": "nourbassem",
     "repository": "https://github.com/funx8/Fun_RCP",
     "bugs": {
         "url": "https://github.com/funx8/Fun_RCP/issues"
