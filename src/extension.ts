@@ -7,6 +7,7 @@ import { getConfig } from "./config";
 import { logInfo } from "./logger";
 import { dataClass } from "./data";
 import { TimeTracker } from "./helpers/timeTracker";
+import { TimeTrackerTreeProvider, TimeTrackerTreeItem } from "./helpers/timeTrackerTreeProvider";
 
 const controller = new RPCController(
     getApplicationId(getConfig()).clientId,
@@ -187,16 +188,63 @@ export async function activate(ctx: ExtensionContext) {
     // Initialize persistent time tracker
     TimeTracker.initialize(ctx);
 
+    // Initialize Tree Provider for Sidebar Time Tracker View
+    const treeProvider = new TimeTrackerTreeProvider();
+    window.registerTreeDataProvider("funRpcTimeTrackerView", treeProvider);
+
+    // Register Edit Time Command
+    const editTimeCommand = commands.registerCommand("fun-rpc.editTime", async (item?: TimeTrackerTreeItem) => {
+        let folderName = item?.folderTime.folder_name;
+        if (!folderName) {
+            return;
+        }
+
+        const currentMinutes = TimeTracker.getAccumulatedMinutes(folderName);
+        const input = await window.showInputBox({
+            title: `Edit Time for ${folderName}`,
+            prompt: "Enter the new coding time in minutes",
+            value: String(currentMinutes),
+            validateInput: (value) => {
+                const parsed = parseInt(value, 10);
+                if (isNaN(parsed) || parsed < 0) {
+                    return "Please enter a valid non-negative number of minutes.";
+                }
+                return null;
+            }
+        });
+
+        if (input !== undefined) {
+            const newMinutes = parseInt(input, 10);
+            const data = TimeTracker.load();
+            const idx = data.folders.findIndex(f => f.folder_name === folderName);
+            if (idx !== -1) {
+                data.folders[idx].minutes = newMinutes;
+            } else {
+                data.folders.push({ folder_name: folderName, minutes: newMinutes });
+            }
+            TimeTracker.save(data);
+            treeProvider.refresh();
+            
+            // Force immediate update of Discord activity
+            await controller.sendActivity();
+            
+            window.showInformationMessage(`Successfully updated coding time for "${folderName}" to ${newMinutes} minutes.`);
+        }
+    });
+
+    ctx.subscriptions.push(editTimeCommand);
+
     editor.setStatusBarItem(StatusBarMode.Pending);
     registerCommands(ctx);
     registerListeners(ctx);
 
     if (!getConfig().get(CONFIG_KEYS.Enable)) await controller.disable();
 
-    // Start persistent time tracking (every 60 seconds)
+    // Start persistent time tracking (every 60 seconds) and refresh sidebar
     const timeTrackingInterval = setInterval(() => {
         if (controller.enabled && !controller.isIdling && dataClass.workspaceName) {
             TimeTracker.incrementMinutes(dataClass.workspaceName);
+            treeProvider.refresh();
         }
     }, 60000);
 

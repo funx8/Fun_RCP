@@ -18,13 +18,13 @@ export class TimeTracker {
 
     public static initialize(context: ExtensionContext) {
         try {
-            const storagePath = context.globalStorageUri.fsPath;
-            if (!fs.existsSync(storagePath)) {
-                fs.mkdirSync(storagePath, { recursive: true });
+            const folderPath = path.join(os.homedir(), ".fun_discord_rpc");
+            if (!fs.existsSync(folderPath)) {
+                fs.mkdirSync(folderPath, { recursive: true });
             }
-            this.filePath = path.join(storagePath, "time_tracker.json");
+            this.filePath = path.join(folderPath, "time_tracker.json");
         } catch {
-            this.filePath = path.join(os.homedir(), ".vscord_time_tracker.json");
+            this.filePath = path.join(os.homedir(), ".fun_discord_rpc_time_tracker.json");
         }
         logInfo(`[TimeTracker] Initialized with path: ${this.filePath}`);
     }

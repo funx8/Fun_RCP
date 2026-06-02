@@ -114,8 +114,30 @@
                 "command": "vscord.stopIdling",
                 "title": "Stop Idle",
                 "category": "VSCord"
+            },
+            {
+                "command": "fun-rpc.editTime",
+                "title": "Edit Workspace Time",
+                "category": "Fun RPC"
             }
         ],
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "fun-rpc-sidebar",
+                    "title": "Fun RPC",
+                    "icon": "assets/icon.png"
+                }
+            ]
+        },
+        "views": {
+            "fun-rpc-sidebar": [
+                {
+                    "id": "funRpcTimeTrackerView",
+                    "name": "Time Tracker"
+                }
+            ]
+        },
         "configuration": [
             {
                 "title": "VSCord",
