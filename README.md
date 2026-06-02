@@ -57,7 +57,7 @@ You can use the following variables to customize your status messages:
 2. Go to Extensions (`Ctrl+Shift+X`).
 3. Click the three dots `...` in the top right of the extensions pane.
 4. Select **Install from VSIX...**
-5. Choose `fun-rpc-1.0.3.vsix`.
+5. Choose `fun-rpc-1.0.4.vsix`.
 6. Reload Window.
 
 ---

@@ -1,19 +1,12 @@
 {
     "name": "fun-rpc",
     "displayName": "Fun RPC",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Monitor and broadcast your daily coding times and projects directly to your Discord profile presence.",
     "publisher": "nourbassem",
     "license": "MIT",
     "author": "nourbassem",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/funx8/Fun_RCP.git"
-    },
-    "bugs": {
-        "url": "https://github.com/funx8/Fun_RCP/issues"
-    },
-    "homepage": "https://github.com/funx8/Fun_RCP#readme",
+
     "keywords": [
         "discord",
         "rich",
