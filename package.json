@@ -66,54 +66,54 @@
     "contributes": {
         "commands": [
             {
-                "command": "vscord.enable",
+                "command": "fun-rpc.enable",
                 "title": "Enable Discord Presence",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.disable",
+                "command": "fun-rpc.disable",
                 "title": "Disable Discord Presence",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.workspace.enable",
+                "command": "fun-rpc.workspace.enable",
                 "title": "Enable Discord Presence in the current workspace",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.workspace.disable",
+                "command": "fun-rpc.workspace.disable",
                 "title": "Disable Discord Presence in the current workspace",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.disconnect",
+                "command": "fun-rpc.disconnect",
                 "title": "Disconnect from Discord Gateway",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.reconnect",
+                "command": "fun-rpc.reconnect",
                 "title": "Reconnect to Discord Gateway",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.enablePrivacyMode",
+                "command": "fun-rpc.enablePrivacyMode",
                 "title": "Enable Privacy Mode",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.disablePrivacyMode",
+                "command": "fun-rpc.disablePrivacyMode",
                 "title": "Disable Privacy Mode",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.startIdling",
+                "command": "fun-rpc.startIdling",
                 "title": "Start Idle",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
-                "command": "vscord.stopIdling",
+                "command": "fun-rpc.stopIdling",
                 "title": "Stop Idle",
-                "category": "VSCord"
+                "category": "Fun RPC"
             },
             {
                 "command": "fun-rpc.editTime",
@@ -140,15 +140,15 @@
         },
         "configuration": [
             {
-                "title": "VSCord",
+                "title": "Fun RPC",
                 "properties": {
-                    "vscord.enable": {
+                    "fun-rpc.enable": {
                         "type": "boolean",
                         "default": "true",
                         "order": 1,
                         "description": "Enable the extension"
                     },
-                    "vscord.app.name": {
+                    "fun-rpc.app.name": {
                         "type": "string",
                         "enum": [
                             "Code",
@@ -162,31 +162,31 @@
                         "description": "Choose the name you want the application to use.\nChoosing \"Custom\" will make it so it use the \"rpc.id\" as application id",
                         "order": 2
                     },
-                    "vscord.app.id": {
+                    "fun-rpc.app.id": {
                         "type": "string",
                         "default": "782685898163617802",
                         "description": "Application id that will be used when `appName` is \"Custom\" or when `appName` is invalid",
                         "order": 3
                     },
-                    "vscord.app.privacyMode.enable": {
+                    "fun-rpc.app.privacyMode.enable": {
                         "type": "boolean",
                         "default": false,
                         "description": "Should we hide the github repository, the file name and the workspace name?",
                         "order": 4
                     },
-                    "vscord.app.whitelistEnabled": {
+                    "fun-rpc.app.whitelistEnabled": {
                         "type": "boolean",
                         "default": false,
                         "description": "Is the whitelist enabled?",
                         "order": 5
                     },
-                    "vscord.app.whitelistIsBlacklist": {
+                    "fun-rpc.app.whitelistIsBlacklist": {
                         "type": "boolean",
                         "default": false,
                         "description": "Switches the whitelist to a blacklist.",
                         "order": 6
                     },
-                    "vscord.app.whitelist": {
+                    "fun-rpc.app.whitelist": {
                         "type": "array",
                         "default": [],
                         "uniqueItems": true,
@@ -202,27 +202,27 @@
                 "title": "Status",
                 "type": "object",
                 "properties": {
-                    "vscord.status.showElapsedTime": {
+                    "fun-rpc.status.showElapsedTime": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should elapsed time be shown?"
                     },
-                    "vscord.status.resetElapsedTimePerFile": {
+                    "fun-rpc.status.resetElapsedTimePerFile": {
                         "type": "boolean",
                         "default": false,
                         "description": "Should we reset the elapsed time after switching file?"
                     },
-                    "vscord.status.problems.enabled": {
+                    "fun-rpc.status.problems.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should we count the problems?"
                     },
-                    "vscord.status.problems.text": {
+                    "fun-rpc.status.problems.text": {
                         "type": "string",
                         "default": "- {problems_count} {problems_pluralize} found",
                         "description": "This text will be shown when there is a problem."
                     },
-                    "vscord.status.problems.countedSeverities": {
+                    "fun-rpc.status.problems.countedSeverities": {
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
@@ -240,31 +240,31 @@
                         ],
                         "description": "List of problem level to count for `problems_count`."
                     },
-                    "vscord.status.idle.check": {
+                    "fun-rpc.status.idle.check": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should we check when you are idling?",
                         "order": 1
                     },
-                    "vscord.status.idle.enabled": {
+                    "fun-rpc.status.idle.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should we enable the idle status? \nIf disabled, the extension will only show a plain card with VS Code logo when idling.",
                         "order": 2
                     },
-                    "vscord.status.idle.disconnectOnIdle": {
+                    "fun-rpc.status.idle.disconnectOnIdle": {
                         "type": "boolean",
                         "default": false,
                         "description": "Should going idle disconnect you from Discord gateway? \nIf enabled, VS Code activity card will disappear from Discord at all when idling.",
                         "order": 3
                     },
-                    "vscord.status.idle.resetElapsedTime": {
+                    "fun-rpc.status.idle.resetElapsedTime": {
                         "type": "boolean",
                         "default": false,
                         "description": "Should going idle reset the elapsed time on the last active file? Only applies if \"Disconnect on Idle\" is enabled.",
                         "order": 4
                     },
-                    "vscord.status.idle.timeout": {
+                    "fun-rpc.status.idle.timeout": {
                         "type": "number",
                         "default": 300,
                         "description": "Time in seconds before the user is considered idle.",
@@ -276,7 +276,7 @@
                 "title": "Ignore",
                 "type": "object",
                 "properties": {
-                    "vscord.ignore.workspaces": {
+                    "fun-rpc.ignore.workspaces": {
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
@@ -285,14 +285,14 @@
                         "default": [],
                         "description": "A list of workspace (name / path) to ignore."
                     },
-                    "vscord.ignore.workspacesText": {
+                    "fun-rpc.ignore.workspacesText": {
                         "type": [
                             "string",
                             "object"
                         ],
                         "description": "The text / object to show in the status when current workspace is ignored, when using the object, key is workspace name and value is the text."
                     },
-                    "vscord.ignore.repositories": {
+                    "fun-rpc.ignore.repositories": {
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
@@ -301,7 +301,7 @@
                         "default": [],
                         "description": "A list of repository name to ignore."
                     },
-                    "vscord.ignore.organizations": {
+                    "fun-rpc.ignore.organizations": {
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
@@ -310,7 +310,7 @@
                         "default": [],
                         "description": "A list of git organizations to ignore."
                     },
-                    "vscord.ignore.gitHosts": {
+                    "fun-rpc.ignore.gitHosts": {
                         "type": "array",
                         "uniqueItems": true,
                         "items": {
@@ -325,42 +325,42 @@
                 "title": "Details",
                 "type": "object",
                 "properties": {
-                    "vscord.status.details.enabled": {
+                    "fun-rpc.status.details.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should details be shown?"
                     },
-                    "vscord.status.details.idle.enabled": {
+                    "fun-rpc.status.details.idle.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should details be shown when idling?"
                     },
-                    "vscord.status.details.text.idle": {
+                    "fun-rpc.status.details.text.idle": {
                         "type": "string",
                         "default": "Idling",
                         "description": "The text to show when idling."
                     },
-                    "vscord.status.details.text.editing": {
+                    "fun-rpc.status.details.text.editing": {
                         "type": "string",
                         "default": "In {workspace} {problems}",
                         "description": "The text to show when editing a file."
                     },
-                    "vscord.status.details.text.debugging": {
+                    "fun-rpc.status.details.text.debugging": {
                         "type": "string",
                         "default": "Debugging {file_name}{file_extension}",
                         "description": "The text to show when debugging."
                     },
-                    "vscord.status.details.text.viewing": {
+                    "fun-rpc.status.details.text.viewing": {
                         "type": "string",
                         "default": "In {workspace} {problems}",
                         "description": "The text to show when viewing a file."
                     },
-                    "vscord.status.details.text.notInFile": {
+                    "fun-rpc.status.details.text.notInFile": {
                         "type": "string",
                         "default": "Not in a file!",
                         "description": "The text to show when you are not in a file."
                     },
-                    "vscord.status.details.text.noWorkSpaceText": {
+                    "fun-rpc.status.details.text.noWorkSpaceText": {
                         "type": "string",
                         "default": "no workspace",
                         "description": "The text to show when you are not in a workspace and there is no workspace text."
@@ -371,47 +371,47 @@
                 "title": "State",
                 "type": "object",
                 "properties": {
-                    "vscord.status.state.enabled": {
+                    "fun-rpc.status.state.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should state be shown?"
                     },
-                    "vscord.status.state.debugging.enabled": {
+                    "fun-rpc.status.state.debugging.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should state be shown when debugging? If disabled, it will be shown when editing/viewing a file."
                     },
-                    "vscord.status.state.idle.enabled": {
+                    "fun-rpc.status.state.idle.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Should state be shown when idling?"
                     },
-                    "vscord.status.state.text.idle": {
+                    "fun-rpc.status.state.text.idle": {
                         "type": "string",
                         "default": "",
                         "description": "The text to show when idling."
                     },
-                    "vscord.status.state.text.editing": {
+                    "fun-rpc.status.state.text.editing": {
                         "type": "string",
                         "default": "Working on {file_name}{file_extension}:{current_line}:{current_column}",
                         "description": "The text to show when editing a file."
                     },
-                    "vscord.status.state.text.debugging": {
+                    "fun-rpc.status.state.text.debugging": {
                         "type": "string",
                         "default": "Debugging: {workspace}",
                         "description": "The text to show when debugging."
                     },
-                    "vscord.status.state.text.viewing": {
+                    "fun-rpc.status.state.text.viewing": {
                         "type": "string",
                         "default": "Viewing {file_name}{file_extension}",
                         "description": "The text to show when viewing a file."
                     },
-                    "vscord.status.state.text.notInFile": {
+                    "fun-rpc.status.state.text.notInFile": {
                         "type": "string",
                         "default": "",
                         "description": "The text to show when you are not in a file."
                     },
-                    "vscord.status.state.text.noWorkspaceFound": {
+                    "fun-rpc.status.state.text.noWorkspaceFound": {
                         "type": "string",
                         "default": "No workspace.",
                         "description": "The text to show when no workspace is found."
@@ -422,102 +422,102 @@
                 "title": "Image",
                 "type": "object",
                 "properties": {
-                    "vscord.status.image.large.idle.key": {
+                    "fun-rpc.status.image.large.idle.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/idle-{app_id}.png",
                         "description": "The image url to use when idling"
                     },
-                    "vscord.status.image.large.idle.text": {
+                    "fun-rpc.status.image.large.idle.text": {
                         "type": "string",
                         "default": "Idling",
                         "description": "The large text to show when idling."
                     },
-                    "vscord.status.image.large.viewing.key": {
+                    "fun-rpc.status.image.large.viewing.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/{lang}.png",
                         "description": "The image url to use when viewing a file."
                     },
-                    "vscord.status.image.large.viewing.text": {
+                    "fun-rpc.status.image.large.viewing.text": {
                         "type": "string",
                         "default": "Viewing a {LANG} file",
                         "description": "The large text to show when viewing a file."
                     },
-                    "vscord.status.image.large.editing.key": {
+                    "fun-rpc.status.image.large.editing.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/{lang}.png",
                         "description": "The image url to use when editing a file."
                     },
-                    "vscord.status.image.large.editing.text": {
+                    "fun-rpc.status.image.large.editing.text": {
                         "type": "string",
                         "default": "Editing a {LANG} file",
                         "description": "The large text to show when editing a file."
                     },
-                    "vscord.status.image.large.debugging.key": {
+                    "fun-rpc.status.image.large.debugging.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/debugging.png",
                         "description": "The image url to use when debugging."
                     },
-                    "vscord.status.image.large.debugging.text": {
+                    "fun-rpc.status.image.large.debugging.text": {
                         "type": "string",
                         "default": "Debugging a {LANG} file",
                         "description": "The large text to show when debugging"
                     },
-                    "vscord.status.image.large.notInFile.key": {
+                    "fun-rpc.status.image.large.notInFile.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/idle-{app_id}.png",
                         "description": "The image url to use when you are not in a file."
                     },
-                    "vscord.status.image.large.notInFile.text": {
+                    "fun-rpc.status.image.large.notInFile.text": {
                         "type": "string",
                         "default": "",
                         "description": "The large text to show when you are not in a file."
                     },
-                    "vscord.status.image.small.idle.key": {
+                    "fun-rpc.status.image.small.idle.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/idle.png",
                         "description": "The image url to use when idling."
                     },
-                    "vscord.status.image.small.idle.text": {
+                    "fun-rpc.status.image.small.idle.text": {
                         "type": "string",
                         "default": "zZz",
                         "description": "The small text to show when idling."
                     },
-                    "vscord.status.image.small.viewing.key": {
+                    "fun-rpc.status.image.small.viewing.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/{app_id}.png",
                         "description": "The image url to use when viewing a file."
                     },
-                    "vscord.status.image.small.viewing.text": {
+                    "fun-rpc.status.image.small.viewing.text": {
                         "type": "string",
                         "default": "{app_name}",
                         "description": "The small text to show when viewing a file."
                     },
-                    "vscord.status.image.small.editing.key": {
+                    "fun-rpc.status.image.small.editing.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/{app_id}.png",
                         "description": "The image url to use when editing a file."
                     },
-                    "vscord.status.image.small.editing.text": {
+                    "fun-rpc.status.image.small.editing.text": {
                         "type": "string",
                         "default": "{app_name}",
                         "description": "The small text to show when editing a file."
                     },
-                    "vscord.status.image.small.debugging.key": {
+                    "fun-rpc.status.image.small.debugging.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/debugging.png",
                         "description": "The image url to use when debugging."
                     },
-                    "vscord.status.image.small.debugging.text": {
+                    "fun-rpc.status.image.small.debugging.text": {
                         "type": "string",
                         "default": "{app_name}",
                         "description": "The small text to show when debugging."
                     },
-                    "vscord.status.image.small.notInFile.key": {
+                    "fun-rpc.status.image.small.notInFile.key": {
                         "type": "string",
                         "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/idle.png",
                         "description": "The image url to use when you are not in a file."
                     },
-                    "vscord.status.image.small.notInFile.text": {
+                    "fun-rpc.status.image.small.notInFile.text": {
                         "type": "string",
                         "default": "Snoozin...",
                         "description": "The small text to show when you are not in a file."
@@ -527,7 +527,7 @@
             {
                 "title": "Buttons",
                 "properties": {
-                    "vscord.status.buttons": {
+                    "fun-rpc.status.buttons": {
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
@@ -849,179 +849,179 @@
                             }
                         }
                     },
-                    "vscord.status.buttons.button1.enabled": {
+                    "fun-rpc.status.buttons.button1.enabled": {
                         "type": "boolean",
                         "default": true
                     },
-                    "vscord.status.buttons.button1.active.enabled": {
+                    "fun-rpc.status.buttons.button1.active.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button1.active.label": {
+                    "fun-rpc.status.buttons.button1.active.label": {
                         "type": "string",
                         "default": "Active Label Button 1",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.active.url": {
+                    "fun-rpc.status.buttons.button1.active.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.inactive.enabled": {
+                    "fun-rpc.status.buttons.button1.inactive.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button1.inactive.label": {
+                    "fun-rpc.status.buttons.button1.inactive.label": {
                         "type": "string",
                         "default": "Inactive Label Button 1",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.inactive.url": {
+                    "fun-rpc.status.buttons.button1.inactive.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.idle.enabled": {
+                    "fun-rpc.status.buttons.button1.idle.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button1.idle.label": {
+                    "fun-rpc.status.buttons.button1.idle.label": {
                         "type": "string",
                         "default": "Idle Label Button 1",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.idle.url": {
+                    "fun-rpc.status.buttons.button1.idle.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.git.active.enabled": {
+                    "fun-rpc.status.buttons.button1.git.active.enabled": {
                         "type": "boolean",
                         "default": true
                     },
-                    "vscord.status.buttons.button1.git.active.label": {
+                    "fun-rpc.status.buttons.button1.git.active.label": {
                         "type": "string",
                         "default": "View Repository",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.git.active.url": {
+                    "fun-rpc.status.buttons.button1.git.active.url": {
                         "type": "string",
                         "default": "{git_url}",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.git.inactive.enabled": {
+                    "fun-rpc.status.buttons.button1.git.inactive.enabled": {
                         "type": "boolean",
                         "default": true
                     },
-                    "vscord.status.buttons.button1.git.inactive.label": {
+                    "fun-rpc.status.buttons.button1.git.inactive.label": {
                         "type": "string",
                         "default": "View Repository",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.git.inactive.url": {
+                    "fun-rpc.status.buttons.button1.git.inactive.url": {
                         "type": "string",
                         "default": "{git_url}",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.git.idle.enabled": {
+                    "fun-rpc.status.buttons.button1.git.idle.enabled": {
                         "type": "boolean",
                         "default": true,
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.git.idle.label": {
+                    "fun-rpc.status.buttons.button1.git.idle.label": {
                         "type": "string",
                         "default": "View Repository",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button1.git.idle.url": {
+                    "fun-rpc.status.buttons.button1.git.idle.url": {
                         "type": "string",
                         "default": "{git_url}",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.enabled": {
+                    "fun-rpc.status.buttons.button2.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button2.active.enabled": {
+                    "fun-rpc.status.buttons.button2.active.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button2.active.label": {
+                    "fun-rpc.status.buttons.button2.active.label": {
                         "type": "string",
                         "default": "Active Label Button 2",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.active.url": {
+                    "fun-rpc.status.buttons.button2.active.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.inactive.enabled": {
+                    "fun-rpc.status.buttons.button2.inactive.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button2.inactive.label": {
+                    "fun-rpc.status.buttons.button2.inactive.label": {
                         "type": "string",
                         "default": "Inactive Label Button 2",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.inactive.url": {
+                    "fun-rpc.status.buttons.button2.inactive.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.idle.enabled": {
+                    "fun-rpc.status.buttons.button2.idle.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button2.idle.label": {
+                    "fun-rpc.status.buttons.button2.idle.label": {
                         "type": "string",
                         "default": "Idle Label Button 2",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.idle.url": {
+                    "fun-rpc.status.buttons.button2.idle.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.git.active.enabled": {
+                    "fun-rpc.status.buttons.button2.git.active.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button2.git.active.label": {
+                    "fun-rpc.status.buttons.button2.git.active.label": {
                         "type": "string",
                         "default": "Git Active Label Button 2",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.git.active.url": {
+                    "fun-rpc.status.buttons.button2.git.active.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.git.inactive.enabled": {
+                    "fun-rpc.status.buttons.button2.git.inactive.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button2.git.inactive.label": {
+                    "fun-rpc.status.buttons.button2.git.inactive.label": {
                         "type": "string",
                         "default": "Git Inactive Label Button 2",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.git.inactive.url": {
+                    "fun-rpc.status.buttons.button2.git.inactive.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.git.idle.enabled": {
+                    "fun-rpc.status.buttons.button2.git.idle.enabled": {
                         "type": "boolean",
                         "default": false
                     },
-                    "vscord.status.buttons.button2.git.idle.label": {
+                    "fun-rpc.status.buttons.button2.git.idle.label": {
                         "type": "string",
                         "default": "Git Idle Label Button 2",
                         "minLength": 1
                     },
-                    "vscord.status.buttons.button2.git.idle.url": {
+                    "fun-rpc.status.buttons.button2.git.idle.url": {
                         "type": "string",
                         "default": "https://github.com/funx8/Fun_RCP",
                         "minLength": 1
@@ -1032,17 +1032,17 @@
                 "title": "Misc",
                 "type": "object",
                 "properties": {
-                    "vscord.file.size.round": {
+                    "fun-rpc.file.size.round": {
                         "type": "number",
                         "default": 2,
                         "description": "The number of decimal places to round the file size to."
                     },
-                    "vscord.file.size.spacer": {
+                    "fun-rpc.file.size.spacer": {
                         "type": "string",
                         "default": " ",
                         "description": "Spacer between the number and the unit."
                     },
-                    "vscord.behaviour.additionalFileMapping": {
+                    "fun-rpc.behaviour.additionalFileMapping": {
                         "type": "object",
                         "default": {},
                         "additionalProperties": {
@@ -1050,17 +1050,17 @@
                         },
                         "description": "Additional regex to check for language, key is regex and value is the language."
                     },
-                    "vscord.behaviour.suppressNotifications": {
+                    "fun-rpc.behaviour.suppressNotifications": {
                         "type": "boolean",
                         "default": false,
                         "description": "Suppresses all notifications from the extension."
                     },
-                    "vscord.behaviour.suppressRpcCouldNotConnect": {
+                    "fun-rpc.behaviour.suppressRpcCouldNotConnect": {
                         "type": "boolean",
                         "default": false,
                         "description": "Suppresses \"RPC_COULD_NOT_CONNECT\" notification."
                     },
-                    "vscord.behaviour.statusBarAlignment": {
+                    "fun-rpc.behaviour.statusBarAlignment": {
                         "type": "string",
                         "enum": [
                             "Right",
@@ -1069,12 +1069,12 @@
                         "default": "Left",
                         "description": "Changing the alignment of the status bar."
                     },
-                    "vscord.file.size.humanReadable": {
+                    "fun-rpc.file.size.humanReadable": {
                         "type": "boolean",
                         "default": true,
                         "description": "If true, the file size will be displayed in a human readable format (e.g. 1.2 MB). If false, the file size will be displayed in bytes."
                     },
-                    "vscord.file.size.standard": {
+                    "fun-rpc.file.size.standard": {
                         "type": "string",
                         "enum": [
                             "iec",
@@ -1089,7 +1089,7 @@
                 "title": "Advanced",
                 "type": "object",
                 "properties": {
-                    "vscord.behaviour.debug": {
+                    "fun-rpc.behaviour.debug": {
                         "type": "boolean",
                         "default": false,
                         "description": "Enable debug mode"
@@ -1100,7 +1100,7 @@
                 "title": "@Deprecated",
                 "type": "object",
                 "properties": {
-                    "vscord.enabled": {
+                    "fun-rpc.enabled": {
                         "type": "boolean",
                         "default": true,
                         "description": "Is the extension enabled?",
@@ -1109,250 +1109,250 @@
                     },
                     "rpc.id": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.app.id#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.app.id instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.app.id#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.app.id instead."
                     },
                     "rpc.appName": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.app.name#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.app.name instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.app.name#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.app.name instead."
                     },
                     "rpc.enabled": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.enabled instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.enabled instead."
                     },
                     "rpc.detailsEditing": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.details.text.editing#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.details.text.editing instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.details.text.editing#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.details.text.editing instead."
                     },
                     "rpc.detailsIdling": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.details.text.idle#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.details.text.idle instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.details.text.idle#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.details.text.idle instead."
                     },
                     "rpc.detailsDebugging": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.details.text.debugging#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.details.text.debugging instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.details.text.debugging#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.details.text.debugging instead."
                     },
                     "rpc.detailsViewing": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.details.text.viewing#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.details.text.viewing instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.details.text.viewing#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.details.text.viewing instead."
                     },
                     "rpc.lowerDetailsEditing": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.state.text.editing#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.state.text.editing instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.state.text.editing#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.state.text.editing instead."
                     },
                     "rpc.lowerDetailsIdling": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.state.text.idle#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.state.text.idle instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.state.text.idle#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.state.text.idle instead."
                     },
                     "rpc.lowerDetailsDebugging": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.state.text.debugging#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.state.text.debugging instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.state.text.debugging#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.state.text.debugging instead."
                     },
                     "rpc.lowerDetailsViewing": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.state.text.viewing#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.state.text.viewing instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.state.text.viewing#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.state.text.viewing instead."
                     },
                     "rpc.lowerDetailsNoWorkspaceFound": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.state.text.noWorkspaceFound#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.state.text.noWorkspaceFound instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.state.text.noWorkspaceFound#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.state.text.noWorkspaceFound instead."
                     },
                     "rpc.baseImageLink": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.image#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.image instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.image#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.image instead."
                     },
                     "rpc.largeImage": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.image#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.image instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.image#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.image instead."
                     },
                     "rpc.largeImageIdling": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.image.small.idle.key#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.image.small.idle.key instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.image.small.idle.key#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.image.small.idle.key instead."
                     },
                     "rpc.smallImage": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.image.small#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.image.small instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.image.small#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.image.small instead."
                     },
                     "rpc.removeElapsedTime": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.showElapsedTime#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.showElapsedTime instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.showElapsedTime#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.showElapsedTime instead."
                     },
                     "rpc.removeDetails": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.details.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.details.enabled instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.details.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.details.enabled instead."
                     },
                     "rpc.removeLowerDetails": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.details#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.details instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.details#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.details instead."
                     },
                     "rpc.removeLowerDetailsIdling": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.details.text.idle#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.details.text.idle instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.details.text.idle#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.details.text.idle instead."
                     },
                     "rpc.showProblems": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.problems.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.problems.enabled instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.problems.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.problems.enabled instead."
                     },
                     "rpc.problemsText": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.problems.text#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.problems.text instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.problems.text#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.problems.text instead."
                     },
                     "rpc.ignoreWorkspaces": {
                         "type": "array",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.ignore.workspaces#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.ignore.workspaces instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.ignore.workspaces#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.ignore.workspaces instead."
                     },
                     "rpc.ignoreWorkspacesText": {
                         "type": [
                             "string",
                             "object"
                         ],
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.ignore.workspacesText#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.ignore.workspacesText instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.ignore.workspacesText#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.ignore.workspacesText instead."
                     },
                     "rpc.checkIdle": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.idle.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.idle.enabled instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.idle.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.idle.enabled instead."
                     },
                     "rpc.disconnectOnIdle": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.idle.disconnectOnIdle#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.idle.disconnectOnIdle instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.idle.disconnectOnIdle#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.idle.disconnectOnIdle instead."
                     },
                     "rpc.resetElapsedTimeAfterIdle": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.idle.resetElapsedTime#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.idle.resetElapsedTime instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.idle.resetElapsedTime#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.idle.resetElapsedTime instead."
                     },
                     "rpc.idleTimeout": {
                         "type": "number",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.idle.timeout#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.idle.timeout instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.idle.timeout#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.idle.timeout instead."
                     },
                     "rpc.idleText": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.image.small.idle.text#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.image.small.idle.text instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.image.small.idle.text#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.image.small.idle.text instead."
                     },
                     "rpc.buttonEnabled": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.enabled instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.enabled instead."
                     },
                     "rpc.buttonActiveLabel": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.active.label#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.active.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.active.label#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.active.label instead."
                     },
-                    "vscord.status.button.active.enabled": {
+                    "fun-rpc.status.button.active.enabled": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.git.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.git.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.git.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.git.label instead."
                     },
-                    "vscord.status.button.active.label": {
+                    "fun-rpc.status.button.active.label": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.git.label#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.git.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.git.label#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.git.label instead."
                     },
-                    "vscord.status.button.active.url": {
+                    "fun-rpc.status.button.active.url": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.git.url#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.git.url instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.git.url#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.git.url instead."
                     },
-                    "vscord.status.button.idle.enabled": {
+                    "fun-rpc.status.button.idle.enabled": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.idle.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.idle.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.idle.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.idle.label instead."
                     },
-                    "vscord.status.button.idle.label": {
+                    "fun-rpc.status.button.idle.label": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.idle.label#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.idle.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.idle.label#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.idle.label instead."
                     },
-                    "vscord.status.button.idle.url": {
+                    "fun-rpc.status.button.idle.url": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.idle.url#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.idle.url instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.idle.url#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.idle.url instead."
                     },
-                    "vscord.status.button.inactive.enabled": {
+                    "fun-rpc.status.button.inactive.enabled": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.inactive.enabled#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.inactive.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.inactive.enabled#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.inactive.label instead."
                     },
-                    "vscord.status.button.inactive.label": {
+                    "fun-rpc.status.button.inactive.label": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.inactive.label#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.inactive.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.inactive.label#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.inactive.label instead."
                     },
-                    "vscord.status.button.inactive.url": {
+                    "fun-rpc.status.button.inactive.url": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.inactive.url#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.inactive.url instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.inactive.url#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.inactive.url instead."
                     },
                     "rpc.buttonActiveUrl": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.active.url#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.active.url instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.active.url#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.active.url instead."
                     },
                     "rpc.buttonInactiveLabel": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.inactive.label#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.inactive.label instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.inactive.label#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.inactive.label instead."
                     },
                     "rpc.buttonInactiveUrl": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.status.buttons.button1.inactive.url#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.status.buttons.button1.inactive.url instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.status.buttons.button1.inactive.url#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.status.buttons.button1.inactive.url instead."
                     },
                     "rpc.ignoreRepositories": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         },
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.ignore.repositories#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.ignore.repositories instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.ignore.repositories#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.ignore.repositories instead."
                     },
                     "rpc.ignoreOrganizations": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         },
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.ignore.organizations#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.ignore.organizations instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.ignore.organizations#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.ignore.organizations instead."
                     },
                     "rpc.ignoreGitHosts": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         },
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.ignore.gitHosts#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.ignore.gitHosts instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.ignore.gitHosts#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.ignore.gitHosts instead."
                     },
                     "rpc.suppressNotifications": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.behaviour.suppressNotifications#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.behaviour.suppressNotifications instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.behaviour.suppressNotifications#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.behaviour.suppressNotifications instead."
                     },
                     "rpc.prioritizeLanguagesOverExtensions": {
                         "type": "boolean",
@@ -1361,8 +1361,8 @@
                     },
                     "rpc.fileSizeHumanReadable": {
                         "type": "boolean",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.behaviour.size.humanReadable#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.behaviour.size.humanReadable instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.behaviour.size.humanReadable#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.behaviour.size.humanReadable instead."
                     },
                     "rpc.fileSizeSpec": {
                         "type": "string",
@@ -1371,8 +1371,8 @@
                             "iec",
                             "jedec"
                         ],
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.file.size.standard#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.file.size.standard instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.file.size.standard#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.file.size.standard instead."
                     },
                     "rpc.fileSizeFixed": {
                         "type": "number",
@@ -1381,8 +1381,8 @@
                     },
                     "rpc.fileSizeSpacer": {
                         "type": "string",
-                        "markdownDeprecationMessage": "**Deprecated**: Please use `#vscord.file.size.spacer#` instead.",
-                        "deprecationMessage": "Deprecated: Please use vscord.file.size.spacer instead."
+                        "markdownDeprecationMessage": "**Deprecated**: Please use `#fun-rpc.file.size.spacer#` instead.",
+                        "deprecationMessage": "Deprecated: Please use fun-rpc.file.size.spacer instead."
                     }
                 }
             }

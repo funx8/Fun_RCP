@@ -37,7 +37,7 @@ class EditorController implements Disposable {
         const whenDisconnected: Partial<StatusBarItem> = {
             text: "$(warning) Fun Discord RPC",
             tooltip: "Disconnected. Click to reconnect",
-            command: "vscord.reconnect"
+            command: "fun-rpc.reconnect"
         };
         const whenPending: Partial<StatusBarItem> = {
             text: "$(pulse) Fun Discord RPC",
@@ -46,7 +46,7 @@ class EditorController implements Disposable {
         const whenSucceeded: Partial<StatusBarItem> = {
             text: "Fun Discord RPC",
             tooltip: "Connected to Discord Gateway. Click to disconnect",
-            command: "vscord.disconnect"
+            command: "fun-rpc.disconnect"
         };
         const statusBarItemByMode = {
             [StatusBarMode.Disconnected]: whenDisconnected,
@@ -102,7 +102,7 @@ class EditorController implements Disposable {
 
     #errorMessageFailedToConnectSelect(config: ExtensionConfiguration, key: string, selection?: string) {
         if (selection === "Reconnect") {
-            commands.executeCommand("vscord.reconnect");
+            commands.executeCommand("fun-rpc.reconnect");
         } else if (selection === "Show output") {
             outputChannel.show(true);
         } else if (selection === "Don't show again") {
