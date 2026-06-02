@@ -454,7 +454,7 @@
                     },
                     "vscord.status.image.large.debugging.key": {
                         "type": "string",
-                        "default": "https://raw.githubusercontent.com/Fun/fun-rpc/main/assets/icons/debugging.png",
+                        "default": "https://raw.githubusercontent.com/funx8/Fun_RCP/main/assets/icons/debugging.png",
                         "description": "The image url to use when debugging."
                     },
                     "vscord.status.image.large.debugging.text": {
